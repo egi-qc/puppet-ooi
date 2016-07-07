@@ -1,0 +1,19 @@
+[DEFAULT]
+
+#
+# From ooi
+#
+
+# The IP address on which the OCCI (ooi) API will listen. (string value)
+ooi_listen = <%= scope.lookupvar('ooi::ooi_listen') %>
+
+# The port on which the OCCI (ooi) API will listen. (integer value)
+ooi_listen_port = <%= scope.lookupvar('ooi::ooi_listen_port') %>
+
+# Number of workers for OCCI (ooi) API service. The default will be equal to
+# the number of CPUs available. (integer value)
+<% if scope.lookupvar('ooi::ooi_workers') != :undef %>
+ooi_workers = <%= scope.lookupvar('ooi::ooi_workers') %>
+<% else %>
+#ooi_workers = <None>
+<% end %>

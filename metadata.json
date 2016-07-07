@@ -1,0 +1,32 @@
+{
+  "name": "puppet-ooi",
+  "version": "0.1.0",
+  "author": "Alvaro Lopez Garcia",
+  "summary": "Puppet ooi module",
+  "license": "Apache-2.0",
+  "source": "git://github.com/indigo-dc/puppet-ooi.git",
+  "project_page": "https://launchpad.net/ooi",
+  "issues_url": "https://bugs.launchpad.net/ooi",
+  "requirements": [
+    { "name": "puppet","version_requirement": "3.x" }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": ["7"]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": ["7"]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": ["14.04", "16.04"]
+    }
+  ],
+  "description": "Puppet module to install ooi on top of an OpenStack deployment",
+  "dependencies": [
+    { "name": "puppetlabs/apt", "version_requirement": ">=1.8.0 <3.0.0" },
+    { "name": "puppetlabs/stdlib", "version_requirement": ">=4.0.0 <5.0.0" }
+  ]
+}
