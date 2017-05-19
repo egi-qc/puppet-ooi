@@ -1,7 +1,7 @@
 class ooi::repos {
     if $::osfamily == "redhat" {
         if $::operatingsystemmajrelease == 7 {
-            include ooi::repos::redredhat
+            include ooi::repos::redhat
         }
         else {
             fail("This Puppet module unly supports RedHat/CentOS 7.")
