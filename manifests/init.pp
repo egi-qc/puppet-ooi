@@ -10,13 +10,12 @@ class ooi ($openstack_version = hiera("ooi::openstack_version", undef),
     }
 
     if $manage_repos {
-        class { "ooi::repos": }
-        $requires = Class["ooi::repos"]
+        class { "ooi::repos": before => Class["ooi::install"] }
     }
 
-    class { "ooi::install": require => $requires }
-
-    class { "ooi::config": require => Class["ooi::install"]}
+    contain ooi::install
+    contain ooi::config
+    Class["ooi::install"] -> Class["ooi::config"]
 
     if $manage_service {
         class { "ooi::service": require => Class["ooi::config"]}
